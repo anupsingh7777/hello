@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #333;
+        }
+        .code-section {
+            background: #f4f4f4;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 20px 0;
+            overflow-x: auto;
+        }
+        button {
+            background: #0066cc;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+        button:hover {
+            background: #0052a3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to My Website</h1>
+    <p>This is my first GitHub Pages site!</p>
+    
+    <h2>Section 1</h2>
+    <div class="code-section">
+        <pre><code>Your code or content goes here
+You can add multiple lines
+Like this!</code></pre>
+        <button onclick="copyCode(this)">Copy Code</button>
+    </div>
+
+    <h2>Section 2</h2>
+    <div class="code-section">
+        <pre><code>More content here</code></pre>
+        <button onclick="copyCode(this)">Copy Code</button>
+    </div>
+
+    <script>
+        function copyCode(button) {
+            const codeBlock = button.previousElementSibling.textContent;
+            navigator.clipboard.writeText(codeBlock);
+            button.textContent = "Copied!";
+            setTimeout(() => {
+                button.textContent = "Copy Code";
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
